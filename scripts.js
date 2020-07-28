@@ -10,7 +10,7 @@ async function initPlot() {
   var svg = d3.select("body").append("svg").attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-  .append("circle").attr("cx", 200).attr("cy", 200).attr("r", 10);
+  .append("circle").attr("cx", 200).attr("cy", 200).attr("r", function(d){return d.CurNewDeath});
 
 
 
