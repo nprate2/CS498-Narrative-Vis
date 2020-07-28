@@ -20,5 +20,5 @@ async function initPlot() {
   .attr("x", function(d, i) {return xScale(i)})
   .attr("y", function(d) {return yScale(d)})
   .attr("width", xScale.bandwidth)
-  .attr("height", function(d) { return 200 - yScale(d)});
+  .attr("height", function(d) { return height - yScale(d)});
 }
