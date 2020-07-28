@@ -7,6 +7,9 @@ async function initPlot() {
   // Used to parse date when reading data
   //var parseDate = d3.time.format("%d-%b-%y").parse;
   // Generates SVG canvas
+  d3.select("svg").append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+  .append("rect").attr("x", 100).attr("y", 100).attr("width", 100).attr("height", 100);
+  
   const data = await d3.csv('./WHO_Covid19_Cases_Deaths_USA.csv');
   d3.select('body').selectAll('p').data(data).enter().append('p');
 
@@ -18,8 +21,4 @@ async function initPlot() {
 
   d3.select('svg').append('g').attr("transform","translate(50,250)")
   .call(d3.axisBottom(xScale).tickFormat(d3.format("~s")));
-
-
-  d3.select("svg").append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-  .append("rect").attr("x", 100).attr("y", 100).attr("width", 100).attr("height", 100);
 }
