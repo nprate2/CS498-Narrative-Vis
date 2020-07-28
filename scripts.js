@@ -17,4 +17,5 @@ async function initPlot() {
       });
 
   });
+  svg.append("circle").attr("cx", 100).attr("cy", 100).attr("cr", 10);
 }
