@@ -10,7 +10,7 @@ async function initPlot() {
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-  svg.append("rect").attr("cx", 200).attr("cy", 200).attr("width", 10).attr("height", 10);
+  svg.append("rect").attr("cx", 200).attr("cy", 200).attr("r", 10);
   // Read and use data
   d3.csv('https://github.com/nprate2/CS498-Narrative-Vis/blob/master/WHO_Covid19_Cases_Deaths_USA.csv', function(error, data) {
       data.forEach(function(d) {
@@ -18,5 +18,5 @@ async function initPlot() {
       });
 
   });
-  svg.append("rect").attr("cx", 100).attr("cy", 100).attr("width", 10).attr("height", 10);
+  svg.append("circle").attr("cx", 100).attr("cy", 100).attr("r", 10);
 }
