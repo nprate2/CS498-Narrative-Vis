@@ -7,8 +7,8 @@ async function initPlot() {
   // Used to parse date when reading data
   //var parseDate = d3.time.format("%d-%b-%y").parse;
   // Generates SVG canvas
-  d3.select("svg").append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+  d3.select("svg").append("g").attr("transform", "translate(50,50)")
   .append("rect").attr("x", 100).attr("y", 100).attr("width", 100).attr("height", 100);
 
-  
+
 }
