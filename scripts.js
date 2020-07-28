@@ -13,10 +13,10 @@ async function initPlot() {
   var xScale = d3.scaleBand().domain(data.NewCase).range([0,width]);
   var yScale = d3.scaleLinear().domain([0,d3.max(data.NewCase)]).range([height,0]);
 
-  d3.select('.tester').append('g')
+  d3.select('.tester').append('g').attr("transform","translate(50,50)")
   .call(d3.axisLeft(yScale).tickFormat(d3.format("~s")));
 
-  d3.select('.tester').append('g')
+  d3.select('.tester').append('g').attr("transform","translate(50,250)")
   .call(d3.axisBottom(xScale).tickFormat(d3.format("~s")));
 
 
