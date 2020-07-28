@@ -7,10 +7,19 @@ async function initPlot() {
   //var parseDate = d3.time.format("%d-%b-%y").parse;
   // Generates SVG canvas
   const data = await d3.csv('./WHO_Covid19_Cur_Max.csv');
+  var paragraph = d3.select("body")
+                .selectAll("p")
+                .data(data)
+                .text(function (d, i) {
+                    console.log("d: " + d);
+                    console.log("i: " + i);
+                    console.log("this: " + this);
+
+                    return d;
   var svg = d3.select("body").append("svg").attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-  .append("circle").attr("cx", 200).attr("cy", 200).attr("r", function(d){return d.CurNewDeath / 6});
+  .append("circle").attr("cx", 200).attr("cy", 200).attr("r", 5});
 
 
 
