@@ -8,7 +8,7 @@ async function initPlot() {
   //var parseDate = d3.time.format("%d-%b-%y").parse;
   // Generates SVG canvas
   const data = await d3.csv('./WHO_covid19_new_cases.csv');
-  //d3.select('body').selectAll('p').data(data).enter().append('p');
+  d3.select('body').selectAll('p').data(data).enter().append('p');
 
   var xScale = d3.scaleBand().domain(data).range([0,width]);
   var yScale = d3.scaleLinear().domain([0,d3.max(data)]).range([height,0]);
