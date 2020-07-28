@@ -6,21 +6,17 @@ async function initPlot() {
   // Used to parse date when reading data
   //var parseDate = d3.time.format("%d-%b-%y").parse;
   // Generates SVG canvas
-  const data = await d3.csv('./WHO_Covid19_Cur_Max.csv');
-  var paragraph = d3.select("body")
-                .selectAll("p")
-                .data(data)
-                .text(function (d, i) {
-                    console.log("d: " + d);
-                    console.log("i: " + i);
-                    console.log("this: " + this);
+  const data = await d3.csv('./WHO_covid19_new_cases.csv');
+  var xScale = d3.scaleBand().domain(data).range([0,width])
+  var yScale = d3.scaleLinear().domain([0,d3.max(data)]).range([height,0])
+  d3.select('body').selectAll('p').data(data).enter().append('p')
 
-                    return d;
   var svg = d3.select("body").append("svg").attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-  .append("circle").attr("cx", 200).attr("cy", 200).attr("r", 5});
-
-
-
+  .selectAll("rect").data(data).enter().append("rect")
+  .attr("x", function(d, i) {return x(i)})
+  .attr("y", function(d) {return y(d)})
+  .attr("width", x.bandwidth)
+  .attr("height", function(d) { return 200 - y(d)})
 }
