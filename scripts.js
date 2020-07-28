@@ -6,7 +6,7 @@ async function initPlot() {
   // Used to parse date when reading data
   //var parseDate = d3.time.format("%d-%b-%y").parse;
   // Generates SVG canvas
-  
+  const data = await d3.csv('./WHO_Covid19_Cur_Max.csv');
   var svg = d3.select("body").append("svg").attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
