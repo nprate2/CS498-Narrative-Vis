@@ -16,9 +16,5 @@ async function initPlot() {
   d3.select(".tester").append("svg").attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-  .selectAll("rect").data(data.NewCase).enter().append("rect")
-  .attr("x", function(d, i) {return xScale(i)})
-  .attr("y", function(d) {return yScale(d)})
-  .attr("width", xScale.bandwidth)
-  .attr("height", function(d) { return height - yScale(d)});
+  .append("rect").attr("x", 100).attr("y", 100).attr("width", 100).attr("height", 100);
 }
