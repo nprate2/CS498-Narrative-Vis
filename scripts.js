@@ -13,20 +13,26 @@ function initPlot() {
 
   //d3.select('body').selectAll('p').data(data).enter().append('p');
 
-  var xScaleNC = d3.scaleLinear().domain([0,190]).range([0,200]);
-  var yScaleNC = d3.scaleLinear().domain([0,d3.max(newCases)]).range([200,0]);
+  var xScaleNC = d3.scaleLinear().domain([0,190]).range([0,width]);
+  var yScaleNC = d3.scaleLinear().domain([0,d3.max(newCases)]).range([height,0]);
+  // Axes
+  d3.select('.chart1').append('g').attr("transform","translate(50,50)")
+  .call(d3.axisLeft(yScaleNC).tickFormat(d3.format("~s")));
+  d3.select('.chart1').append('g').attr("transform","translate(50,250)")
+  .call(d3.axisBottom(xScaleNC).tickFormat(d3.format("~s")));
 
+  // Chart Rects
   d3.select('.chart1').append('g').attr("transform", "translate(50,50)")
   .selectAll("rect").data(newCases).enter().append("rect")
   .attr("x", function(d, i) {return xScaleNC(i)})
-  .attr("y", function(d) {return yScaleNC(d)})
-  .attr("width", 200 / 190)
-  .attr("height", function(d) { return 200 - yScaleNC(d)});
-
-  d3.select('.chart1').append('g').attr("transform","translate(50,50)")
-  .call(d3.axisLeft(yScaleNC).tickFormat(d3.format("~s")));
-
-  d3.select('.chart1').append('g').attr("transform","translate(50,250)")
-  .call(d3.axisBottom(xScaleNC).tickFormat(d3.format("~s")));
+  .attr("y", function(d) {return yScaleNC(0)})
+  .attr("width", width / 190)
+  .attr("height", function(d) { return height - yScaleNC(0)});
+  // Animation
+  d3.select('.chart1').selectAll("rect")
+  .transition().duration(800)
+  .attr("y", function(d) { return yScaleNC(d); })
+  .attr("height", function(d) { return height - yScaleNC(d); })
+  .delay(function(d,i){return(i*100)})
 
 }
