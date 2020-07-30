@@ -1,16 +1,19 @@
-rect {fill: blue; stroke: black;}
-circle {fill: blue; stroke: black;}
+rect { stroke: black;}
 
+.title {
+  text-align: center;
+  font-family: "montserrat";
+  text-decoration: underline;
+  text-shadow: 2px 2px 4px grey
+}
 .btnContainer {
   text-align: center;
-  margin-top: 50px;
 }
-
 .btn {
-  margin: 10px;
+  margin: 0px;
   border: 1px solid #3498db;
-  padding: 10px 30px;
-  font-size: 20px;
+  padding: 5px 15px;
+  font-size: 15px;
   font-family: "montserrat";
   cursor: pointer;
 }
