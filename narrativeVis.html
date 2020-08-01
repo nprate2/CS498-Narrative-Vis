@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<script src="https://d3js.org/d3.v5.js"></script>
+
+<head>
+  <link rel="stylesheet" href="narrativeVis.css">
+  <meta charset="UTF-8">
+  <meta name="author" content="Nicolas Prate">
+  <title>CS 498 Narrative Visualization</title>
+</head>
+
+<body onload="initPlot()">
+  <h2 class="title">Exploring The Progression of Covid-19 Within The USA (Scene 1/3)</h2>
+  <div class="btnContainer">
+      <a href="index.html"><button class="btn 1">Reset</button></a>
+      <button onclick="updateState()" class="btn 2">Continue</button>
+  </div>
+  <svg width=1500 height=350 class="chart1" ></svg>
+  <svg width=1500 height=350 class="dailyCharts"></svg>
+  <script src="narrativeVis.js"></script>
+</body>
+
+</html>

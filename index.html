@@ -3,7 +3,7 @@
 <script src="https://d3js.org/d3.v5.js"></script>
 
 <head>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="narrativeVis.css">
   <meta charset="UTF-8">
   <meta name="description" content="This narrative visualization is my final project for CS498, Data Visualization, at the University of Illinois.
   Through exploration of data, I hope to objectively visualize the severity of Covid-19's impact on American citizens through time.">
@@ -11,15 +11,19 @@
   <title>CS 498 Narrative Visualization</title>
 </head>
 
-<body onload="initPlot()">
+<body>
   <h2 class="title">Exploring The Progression of Covid-19 Within The USA</h2>
+  <p class="indexIntro 1">This interactive slideshow is meant to help visualize the progression of confirmed cases, deaths,
+  <br>and tests related to the coronavirus pandemic within the United States of America.
+  <br>The data used spans January 20, 2020 - July 27, 2020.
+  <br><br>Over the past month, we have observed a rather large spike in the number of confirmed cases of Covid-19. Many who view this statistic out of context then assume that the pandemic is getting wildly out of control.
+  <br>In actuality, the data viewed in full suggests that the pandemic is not simply growing out of control, but we are rather far more capable of identifying cases of the virus than we have been in the past.
+  <br>Many of the "new cases" each day are in fact cases that have been present for days if not weeks, but that are only being identified now as a result of tremedous testing increases.
+  <br>Additionally, looking at the deaths data reveals that despite this sharp increase in confirmed cases, the daily death count remains near one sixth its maximum value.
+  <br>Click "Begin" to start the interactive slideshow.</p>
   <div class="btnContainer">
-      <a href="index.html"><button class="btn 1">Restart</button></a>
-      <button onclick="updateState()" class="btn 2">Continue</button>
+      <a href="narrativeVis.html"><button class="btn 1">Begin</button></a>
   </div>
-  <svg width=1500 height=350 class="chart1"></svg>
-  <svg width=1500 height=350 class="dailyCharts"></svg>
-  <script src="scripts.js"></script>
 </body>
 
 </html>
