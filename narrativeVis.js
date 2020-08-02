@@ -455,13 +455,12 @@ function drawTests() {
 
 function updateState() {
   if (state == "init") {
-    state = "1";
+    state = "2";
     d3.select('.title').text("Exploring The Progression of Covid-19 Within The USA (Scene 2/3)");
     drawDeaths();
   } else {
-    if (state == "1") {
+    if (state == "2") {
       d3.select('.title').text("Exploring The Progression of Covid-19 Within The USA (Scene 3/3)");
-      state = "2";
       drawTests();
     }
   }
