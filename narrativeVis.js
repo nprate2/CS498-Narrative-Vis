@@ -50,7 +50,7 @@ function initPlot() {
   // Y axes
   d3.select('.chart1').append('g').attr("transform","translate(100,50)").call(d3.axisLeft(yScaleCC).tickFormat(d3.format("~s")));
   // X label
-  d3.select('.chart1').append("text").attr("x", 250 ).attr("y", 285 ).text("Days Since First US Case (Jan 20, 2020)")
+  d3.select('.chart1').append("text").attr("x", 250 ).attr("y", 285 ).text("Days Since First U.S. Case (Jan 20, 2020)")
       .style("text-anchor", "middle").style("font-size", "12px");
   // Y label
   d3.select('.chart1').append("text").classed("rotation", true).attr("transform", "translate(0, 0) rotate(-90)").attr("y", 150)
@@ -64,7 +64,7 @@ function initPlot() {
   // Y axes 2
   d3.select('.chart1').append('g').attr("transform","translate(600,50)").call(d3.axisLeft(yScaleCD).tickFormat(d3.format("~s")));
   // X label 2
-  d3.select('.chart1').append("text").attr("x", 750 ).attr("y", 285 ).text("Days Since First US Case (Jan 20, 2020)")
+  d3.select('.chart1').append("text").attr("x", 750 ).attr("y", 285 ).text("Days Since First U.S. Case (Jan 20, 2020)")
       .style("text-anchor", "middle").style("font-size", "12px");
   // Y label 2
   d3.select('.chart1').append("text").attr("transform", "translate(0, 0) rotate(-90)").attr("y", 150)
@@ -79,7 +79,7 @@ function initPlot() {
   // Y axes 3
   d3.select('.chart1').append('g').attr("transform","translate(1100,50)").call(d3.axisLeft(yScaleCT).tickFormat(d3.format("~s")));
   // X label 3
-  d3.select('.chart1').append("text").attr("x", 1250 ).attr("y", 285 ).text("Days Since First US Case (Jan 20, 2020)")
+  d3.select('.chart1').append("text").attr("x", 1250 ).attr("y", 285 ).text("Days Since First U.S. Case (Jan 20, 2020)")
       .style("text-anchor", "middle").style("font-size", "12px");
   // Y label 3
   d3.select('.chart1').append("text").attr("transform", "translate(0, 0) rotate(-90)").attr("y", 150)
@@ -94,7 +94,7 @@ function initPlot() {
   // Y axes
   d3.select('.dailyCharts').append('g').attr("transform","translate(100,50)").call(d3.axisLeft(yScaleNC).tickFormat(d3.format("~s")));
   // X label
-  d3.select('.dailyCharts').append("text").attr("x", 250 ).attr("y", 285 ).text("Days Since First US Case (Jan 20, 2020)")
+  d3.select('.dailyCharts').append("text").attr("x", 250 ).attr("y", 285 ).text("Days Since First U.S. Case (Jan 20, 2020)")
       .style("text-anchor", "middle").style("font-size", "12px");
 
   // New Deaths Title
@@ -105,7 +105,7 @@ function initPlot() {
   // Y axes 2
   d3.select('.dailyCharts').append('g').attr("transform","translate(600,50)").call(d3.axisLeft(yScaleND).tickFormat(d3.format("~s")));
   // X label 2
-  d3.select('.dailyCharts').append("text").attr("x", 750 ).attr("y", 285 ).text("Days Since First US Case (Jan 20, 2020)")
+  d3.select('.dailyCharts').append("text").attr("x", 750 ).attr("y", 285 ).text("Days Since First U.S. Case (Jan 20, 2020)")
       .style("text-anchor", "middle").style("font-size", "12px");
 
   // New Tests Title
@@ -116,7 +116,7 @@ function initPlot() {
   // Y axes 3
   d3.select('.dailyCharts').append('g').attr("transform","translate(1100,50)").call(d3.axisLeft(yScaleNT).tickFormat(d3.format("~s")));
   // X label 3
-  d3.select('.dailyCharts').append("text").attr("x", 1250 ).attr("y", 285 ).text("Days Since First US Case (Jan 20, 2020)").style("text-anchor", "middle").style("font-size", "12px");
+  d3.select('.dailyCharts').append("text").attr("x", 1250 ).attr("y", 285 ).text("Days Since First U.S. Case (Jan 20, 2020)").style("text-anchor", "middle").style("font-size", "12px");
 
   // Cum Cases Rectangles
   d3.select('.chart1').append('g').attr("transform", "translate(100,50)")
@@ -192,12 +192,18 @@ function initPlot() {
   .delay(function(d,i){return(i*25)});
 
   // Annotations Cum Cases
-  d3.select('.chart1').append('g').append("rect").attr("id","0").attr('x', 115).attr('y', 98).attr('width', 148).attr('height', 35).style('fill', 'none');
-  d3.select('.chart1').append('g').append('text').text('Confirmed cases exceeds 1,000 March').attr('x', 120).attr('y', 115).attr("font-family", "montserrat")
+  d3.select('.chart1').append('g').append("rect").attr("id","0").attr('x', 115).attr('y', 60).attr('width', 198).attr('height', 35).style('fill', 'none');
+  d3.select('.chart1').append('g').append('text').text('Statistics can be misleading. While confirmed cases exceed').attr('x', 120).attr('y', 70).attr("font-family", "montserrat")
   .attr("font-size", "8px");
-  d3.select('.chart1').append('g').append('text').text('13th, 54 days after the first US case.').attr('x', 120).attr('y', 125).attr("font-family", "sans-serif")
+  d3.select('.chart1').append('g').append('text').text('4 million, there are only 2,646,921 active cases, with').attr('x', 120).attr('y', 80).attr("font-family", "sans-serif")
   .attr("font-size", "8px");
-  d3.select('.chart1').append('g').append('path').attr('d','M190,133L190,250').attr("stroke", "black");
+  d3.select('.chart1').append('g').append('text').text('1,355,363 people having recovered already.').attr('x', 120).attr('y', 90).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+  d3.select('.chart1').append('g').append('path').attr('d','M250,95L250,185').attr("stroke", "black");
+  d3.select('.chart1').append('g').append('path').attr('d','M250,185L255,185').attr("stroke", "black");
+  d3.select('.chart1').append('g').append('path').attr('d','M250,125L255,125').attr("stroke", "black");
+  d3.select('.chart1').append('g').append('path').attr('d','M250,60L250,50').attr("stroke", "black");
+  d3.select('.chart1').append('g').append('path').attr('d','M250,50L255,50').attr("stroke", "black");
   // Legend Cum Cases
   d3.select('.chart1').append('g').append('text').text('Hover Mouse for Detail').attr('x', 405).attr('y', 59).attr("font-family", "montserrat").attr("font-size", "10px");
   d3.select('.chart1').append('g').append('rect').attr('x', 405).attr('y', 70).attr('height', 10).attr('width', 10).style('fill', 'darkred');
@@ -208,12 +214,20 @@ function initPlot() {
   d3.select('.chart1').append('g').append('text').text('Recovered Cases').attr('x', 420).attr('y', 119).attr("font-family", "montserrat").attr("font-size", "10px");
 
   // Annotations New Cases
-  d3.select('.dailyCharts').append('g').append("rect").attr("id","0").attr('x', 115).attr('y', 98).attr('width', 125).attr('height', 35).style('fill', 'none');
-  d3.select('.dailyCharts').append('g').append('text').text('On July 19th, the maximum daily').attr('x', 120).attr('y', 115).attr("font-family", "sans-serif")
+  d3.select('.dailyCharts').append('g').append("rect").attr("id","0").attr('x', 115).attr('y', 60).attr('width', 195).attr('height', 25).style('fill', 'none');
+  d3.select('.dailyCharts').append('g').append('text').text('Focusing on daily new cases, we see a spike in July').attr('x', 120).attr('y', 70).attr("font-family", "sans-serif")
   .attr("font-size", "8px");
-  d3.select('.dailyCharts').append('g').append('text').text('cases was observed: 74,354.').attr('x', 120).attr('y', 125).attr("font-family", "sans-serif")
+  d3.select('.dailyCharts').append('g').append('text').text('roughly double that which was experienced in April.').attr('x', 120).attr('y', 80).attr("font-family", "sans-serif")
   .attr("font-size", "8px");
-  d3.select('.dailyCharts').append('g').append('path').attr('d','M238,98L385,107').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M365,100L403,100').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M365,100L365,105').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M403,100L403,105').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M384,100L310,75').attr("stroke", "black");
+
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M220,170L257,170').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M220,170L220,175').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M257,170L257,175').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M239,170L239,85').attr("stroke", "black");
   // Legend New Cases
   d3.select('.dailyCharts').append('g').append('text').text('Hover Mouse for Detail').attr('x', 405).attr('y', 59).attr("font-family", "montserrat").attr("font-size", "10px");
   d3.select('.dailyCharts').append('g').append('rect').attr('x', 405).attr('y', 70).attr('height', 10).attr('width', 10).style('fill', 'darkred');
@@ -253,25 +267,54 @@ function drawDeaths() {
   .attr("height", function(d) { return height - yScaleND(d); })
   .delay(function(d,i){return(i*25)});
   // Annotations Cum Deaths
-  d3.select('.chart1').append('g').append("rect").attr("id","0").attr('x', 615).attr('y', 98).attr('width', 135).attr('height', 35).style('fill', 'none');
-  d3.select('.chart1').append('g').append('text').text('The first two deaths occured March').attr('x', 620).attr('y', 115).attr("font-family", "sans-serif")
+  d3.select('.chart1').append('g').append("rect").attr("id","0").attr('x', 615).attr('y', 60).attr('width', 185).attr('height', 45).style('fill', 'none');
+  d3.select('.chart1').append('g').append('text').text('Despite this spike, the recent cumulative death').attr('x', 620).attr('y', 70).attr("font-family", "sans-serif")
   .attr("font-size", "8px");
-  d3.select('.chart1').append('g').append('text').text('2nd, 43 days after the first US case.').attr('x', 620).attr('y', 125).attr("font-family", "sans-serif")
+  d3.select('.chart1').append('g').append('text').text('count appears to be increasing somewhat linearly,').attr('x', 620).attr('y', 80).attr("font-family", "sans-serif")
   .attr("font-size", "8px");
-  d3.select('.chart1').append('g').append('path').attr('d','M668,133L668,250').attr("stroke", "black");
+  d3.select('.chart1').append('g').append('text').text('suggesting we are better prepared now to nurse').attr('x', 620).attr('y', 90).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+  d3.select('.chart1').append('g').append('text').text('the ill than we previously have been.').attr('x', 620).attr('y', 100).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+  d3.select('.chart1').append('g').append('path').attr('d','M820,80L890,35').attr("stroke", "black");
+  d3.select('.chart1').append('g').append('path').attr('d','M820,80L825,85').attr("stroke", "black");
+  d3.select('.chart1').append('g').append('path').attr('d','M890,35L895,40').attr("stroke", "black");
+  d3.select('.chart1').append('g').append('path').attr('d','M800,60L850,60').attr("stroke", "black");
   // Legend Cum Deaths
   d3.select('.chart1').append('g').append('text').text('Hover Mouse for Detail').attr('x', 905).attr('y', 59).attr("font-family", "montserrat").attr("font-size", "10px");
   d3.select('.chart1').append('g').append('rect').attr('x', 905).attr('y', 70).attr('height', 10).attr('width', 10).style('fill', 'dimgrey');
   d3.select('.chart1').append('g').append('text').text('Deaths').attr('x', 920).attr('y', 79).attr("font-family", "montserrat").attr("font-size", "10px");
 
-
   // Annotations New Deaths
-  d3.select('.dailyCharts').append('g').append("rect").attr("id","0").attr('x', 612).attr('y', 98).attr('width', 123).attr('height', 35).style('fill', 'none');
-  d3.select('.dailyCharts').append('g').append('text').text('On April 17th, the maximum daily').attr('x', 615).attr('y', 115).attr("font-family", "sans-serif")
+  d3.select('.dailyCharts').append('g').append("rect").attr("id","0").attr('x', 612).attr('y', 60).attr('width', 123).attr('height', 45).style('fill', 'none');
+  d3.select('.dailyCharts').append('g').append('text').text('On April 17th, the maximum daily').attr('x', 615).attr('y', 70).attr("font-family", "sans-serif")
   .attr("font-size", "8px");
-  d3.select('.dailyCharts').append('g').append('text').text('deaths was observed: 6,409.').attr('x', 615).attr('y', 125).attr("font-family", "sans-serif")
+  d3.select('.dailyCharts').append('g').append('text').text('deaths was observed: 6,409.').attr('x', 615).attr('y', 80).attr("font-family", "sans-serif")
   .attr("font-size", "8px");
-  d3.select('.dailyCharts').append('g').append('path').attr('d','M675,98L740,50').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('text').text('On that same day, there were').attr('x', 615).attr('y', 90).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+  d3.select('.dailyCharts').append('g').append('text').text('535,661 active cases.').attr('x', 615).attr('y', 100).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M675,60L740,50').attr("stroke", "black");
+
+  d3.select('.dailyCharts').append('g').append("rect").attr("id","0").attr('x', 775).attr('y', 100).attr('width', 150).attr('height', 35).style('fill', 'none');
+  d3.select('.dailyCharts').append('g').append('text').text('There are 4,002,284 active cases today,').attr('x', 780).attr('y', 110).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+  d3.select('.dailyCharts').append('g').append('text').text("yet July's average daily deaths (723)").attr('x', 780).attr('y', 120).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+  d3.select('.dailyCharts').append('g').append('text').text("is the lowest since March's (77).").attr('x', 780).attr('y', 130).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M684,225L775,115').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M665,225L705,225').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M665,225L665,230').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M705,225L705,230').attr("stroke", "black");
+
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M879,200L879,135').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M860,200L900,200').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M860,200L860,205').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M900,200L900,205').attr("stroke", "black");
+
   // Legend New Deaths
   d3.select('.dailyCharts').append('g').append('text').text('Hover Mouse for Detail').attr('x', 905).attr('y', 59).attr("font-family", "montserrat").attr("font-size", "10px");
   d3.select('.dailyCharts').append('g').append('rect').attr('x', 905).attr('y', 70).attr('height', 10).attr('width', 10).style('fill', 'dimgrey');
@@ -355,12 +398,20 @@ function drawTests() {
   .delay(function(d,i){return(i*25)});
 
   // Annotations Cum Tests
-  d3.select('.chart1').append('g').append("rect").attr("id","0").attr('x', 1115).attr('y', 98).attr('width', 135).attr('height', 35).style('fill', 'none');
-  d3.select('.chart1').append('g').append('text').text('The first 874 tests occured March').attr('x', 1120).attr('y', 115).attr("font-family", "sans-serif")
+  d3.select('.chart1').append('g').append("rect").attr("id","0").attr('x', 1115).attr('y', 60).attr('width', 200).attr('height', 45).style('fill', 'none');
+  d3.select('.chart1').append('g').append('text').text('With a population of 328 million, the U.S. has currently').attr('x', 1120).attr('y', 70).attr("font-family", "sans-serif")
   .attr("font-size", "8px");
-  d3.select('.chart1').append('g').append('text').text('8th, 49 days after the first US case.').attr('x', 1120).attr('y', 125).attr("font-family", "sans-serif")
+  d3.select('.chart1').append('g').append('text').text('tested a group sized 1/7th of its population, due to a').attr('x', 1120).attr('y', 80).attr("font-family", "sans-serif")
   .attr("font-size", "8px");
-  d3.select('.chart1').append('g').append('path').attr('d','M1175,133L1175,250').attr("stroke", "black");
+  d3.select('.chart1').append('g').append('text').text('~10X increase in testing since the April cases spike.').attr('x', 1120).attr('y', 90).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+  d3.select('.chart1').append('g').append('text').text('The rate of increase of testing dwarfs that of cases.').attr('x', 1120).attr('y', 100).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+  d3.select('.chart1').append('g').append('path').attr('d','M1240,105L1240,235').attr("stroke", "black");
+  d3.select('.chart1').append('g').append('path').attr('d','M1240,235L1235,235').attr("stroke", "black");
+  d3.select('.chart1').append('g').append('path').attr('d','M1240,60L1240,55').attr("stroke", "black");
+  d3.select('.chart1').append('g').append('path').attr('d','M1240,55L1235,55').attr("stroke", "black");
+
   // Legend Cum Tests
   d3.select('.chart1').append('g').append('text').text('Hover Mouse for Detail').attr('x', 1405).attr('y', 59).attr("font-family", "montserrat").attr("font-size", "10px");
   d3.select('.chart1').append('g').append('rect').attr('x', 1405).attr('y', 70).attr('height', 10).attr('width', 10).style('fill', 'lightblue');
@@ -371,12 +422,29 @@ function drawTests() {
   d3.select('.chart1').append('g').append('text').text('Active Cases').attr('x', 1420).attr('y', 119).attr("font-family", "montserrat").attr("font-size", "10px");
 
   // Annotations New Tests
-  d3.select('.dailyCharts').append('g').append("rect").attr("id","0").attr('x', 1115).attr('y', 98).attr('width', 125).attr('height', 35).style('fill', 'none');
-  d3.select('.dailyCharts').append('g').append('text').text('On July 24th, the maximum daily').attr('x', 1120).attr('y', 115).attr("font-family", "sans-serif")
+  d3.select('.dailyCharts').append('g').append("rect").attr("id","0").attr('x', 1115).attr('y', 60).attr('width', 200).attr('height', 75).style('fill', 'none');
+  d3.select('.dailyCharts').append('g').append('text').text('Now, for every ~70,000 positive tests we see ~800,000').attr('x', 1120).attr('y', 70).attr("font-family", "sans-serif")
   .attr("font-size", "8px");
-  d3.select('.dailyCharts').append('g').append('text').text('tests was observed: 929,838.').attr('x', 1120).attr('y', 125).attr("font-family", "sans-serif")
+  d3.select('.dailyCharts').append('g').append('text').text('negatives. During the April spike, for every ~35,000').attr('x', 1120).attr('y', 80).attr("font-family", "sans-serif")
   .attr("font-size", "8px");
-  d3.select('.dailyCharts').append('g').append('path').attr('d','M1175,98L1395,50').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('text').text("positives we saw only ~100,000 negatives. 'Daily").attr('x', 1120).attr('y', 90).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+  d3.select('.dailyCharts').append('g').append('text').text("cases' is far more accurate now than it's ever been.").attr('x', 1120).attr('y', 100).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+  d3.select('.dailyCharts').append('g').append('text').text("July's spike doesn't suggest a midhandling of the").attr('x', 1120).attr('y', 110).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+  d3.select('.dailyCharts').append('g').append('text').text("pandemic by U.S. leaders, and may likely imply the").attr('x', 1120).attr('y', 120).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+  d3.select('.dailyCharts').append('g').append('text').text("opposite when viewed in context.").attr('x', 1120).attr('y', 130).attr("font-family", "sans-serif")
+  .attr("font-size", "8px");
+
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M1175,240L1175,135').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M1175,240L1170,240').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M1175,220L1170,220').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M1175,235L1180,235').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M1175,60L1175,55').attr("stroke", "black");
+  d3.select('.dailyCharts').append('g').append('path').attr('d','M1175,55L1180,55').attr("stroke", "black");
+
   // Legend New Tests
   d3.select('.dailyCharts').append('g').append('text').text('Hover Mouse for Detail').attr('x', 1405).attr('y', 59).attr("font-family", "montserrat").attr("font-size", "10px");
   d3.select('.dailyCharts').append('g').append('rect').attr('x', 1405).attr('y', 70).attr('height', 10).attr('width', 10).style('fill', 'lightblue');
